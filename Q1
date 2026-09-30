@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float consumo, total_consumo = 0.0, media_geral;
+    int i;
+
+    // Cabeçalho do programa
+    printf("--- Monitoramento de Consumo de Agua ---\n\n");
+
+    // Loop para ler o consumo dos 5 moradores
+    for (i = 1; i <= 5; i++) {
+        printf("Digite o consumo do morador %d (em m³): ", i);
+        scanf("%f", &consumo);
+
+        // Verifica se o consumo está dentro ou acima da média estabelecida (20 m³)
+        if (consumo <= 20.0) {
+            printf("Status: Consumo DENTRO da media (ate 20 m³).\n\n");
+        } else {
+            printf("Status: Consumo ACIMA da media.\n\n");
+        }
+
+        // Acumula o consumo total para o cálculo da média geral
+        total_consumo += consumo;
+    }
+
+    // Cálculo da média geral de consumo dos 5 moradores
+    media_geral = total_consumo / 5.0;
+
+    // Exibição do resultado final
+    printf("=======================================\n");
+    printf("Consumo medio geral do condominio: %.2f m³\n", media_geral);
+    printf("=======================================\n");
+
+    return 0;
+}
