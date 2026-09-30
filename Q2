@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    float saldo_total = 0.0;
+    int opcao;
+
+    printf("=== Cofrinho Digital ===\n");
+
+    do {
+        // Exibição do menu de opções
+        printf("\nSelecione a moeda a adicionar:\n");
+        printf("1 - R$ 0,50\n");
+        printf("2 - R$ 1,00\n");
+        printf("3 - R$ 2,00\n");
+        printf("0 - Encerrar e ver total\n");
+        printf("Opcao: ");
+        scanf("%d", &opcao);
+
+        // Processamento da opção escolhida
+        switch (opcao) {
+            case 1:
+                saldo_total += 0.50;
+                printf("Adicionado R$ 0,50 ao cofrinho.\n");
+                break;
+            case 2:
+                saldo_total += 1.00;
+                printf("Adicionado R$ 1,00 ao cofrinho.\n");
+                break;
+            case 3:
+                saldo_total += 2.00;
+                printf("Adicionado R$ 2,00 ao cofrinho.\n");
+                break;
+            case 0:
+                printf("\nEncerrando o cofrinho...\n");
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
+                break;
+        }
+
+    } while (opcao != 0);
+
+    // Exibição do saldo total acumulado
+    printf("===================================\n");
+    printf("Total acumulado no cofrinho: R$ %.2f\n", saldo_total);
+    printf("===================================\n");
+
+    return 0;
+}
